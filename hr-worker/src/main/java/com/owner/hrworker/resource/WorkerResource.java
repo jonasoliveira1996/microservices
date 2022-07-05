@@ -30,6 +30,6 @@ public class WorkerResource {
     public ResponseEntity<Worker> findById(@PathVariable Long id) {
         Worker obj = repository.findById(id).get();
 
-        return ResponseEntity.status(HttpStatus.FOUND).body(obj);
+        return ResponseEntity.ok(obj);
     }
 }

@@ -22,6 +22,7 @@ public class PaymentResource {
             @PathVariable Long workerId, @PathVariable Integer days){
         Payment payment = service.getPayment(workerId, days);
 
-        return ResponseEntity.status(HttpStatus.FOUND).body(payment);
+
+        return ResponseEntity.ok(payment);
     }
 }
