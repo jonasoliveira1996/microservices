@@ -18,11 +18,8 @@ public class PaymentService {
     }
 
     public Payment getPayment(long workerId, int days) {
-        System.out.println("ANTES************");
-        LoadBalancerServerInstanceConfiguration lb = new LoadBalancerServerInstanceConfiguration();
-        lb.serviceInstanceListSupplier().get().toStream().forEach(System.out::println);
         Worker worker = workerFeignClient.findById(workerId).getBody();
-        System.out.println("DEPOIS************");
+
         return new Payment(worker.getName(), worker.getDailyIncome(), days);
     }
 }
