@@ -31,6 +31,7 @@ public class PaymentResource {
 
         return ResponseEntity.ok(payment);
     }
+    
     public ResponseEntity<Payment> getPaymentAlternative(
             @PathVariable Long workerId, @PathVariable Integer days, Throwable e){
         Payment payment = new Payment("Test Circuit Breaker", 5.0, days);
